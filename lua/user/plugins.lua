@@ -268,10 +268,29 @@ return packer.startup(function(use)
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
 	-- LSP
-	use("neovim/nvim-lspconfig") -- enable LSP
+	use({
+		"neovim/nvim-lspconfig",
+		opt = true,
+		event = "BufReadPre",
+		wants = { "nvim-lsp-installer", "cmp-nvim-lsp", "lua-dev.nvim", "vim-illuminate", "null-ls.nvim" },
+		config = function()
+			require("config.lsp").setup()
+		end,
+		requires = {
+			"williamboman/nvim-lsp-installer",
+			"folke/lua-dev.nvim",
+			"RRethy/vim-illuminate",
+			"jose-elias-alvarez/null-ls.nvim",
+			{
+				"j-hui/fidget.nvim",
+				config = function()
+					require("fidget").setup({})
+				end,
+			},
+		},
+	})
 	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
-	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 	use({
 		"simrat39/rust-tools.nvim",
 		config = function()
@@ -464,6 +483,27 @@ return packer.startup(function(use)
 
 	use({ "mg979/vim-visual-multi" })
 	use({ "wellle/targets.vim", requires = { "wellle/line-targets.vim" } })
+
+	-- testing plugins
+
+	use({
+		"https://gitlab.com/yorickpeterse/nvim-window.git",
+		-- config = get_config("nvim-window"),
+	})
+
+	use({
+		"waylonwalker/Telegraph.nvim",
+		-- config = function()
+		-- 	require("telegraph").setup({})
+		-- end,
+	})
+
+	use({ "rhysd/conflict-marker.vim" })
+
+	use({
+		"edluffy/specs.nvim",
+		-- config = get_config("specs")
+	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

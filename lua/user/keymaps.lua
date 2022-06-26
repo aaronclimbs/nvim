@@ -105,6 +105,9 @@ keymap(
 	opts
 )
 
+-- RANGE FORMAT
+keymap("v", "<leader>lf", ":'<,'>lua vim.lsp.buf.range_formatting()<CR>", opts)
+
 --- TEXT OBJECTS
 -- Around line: with leading and trailing whitespace
 keymap("v", "al", ":<c-u>silent! normal! 0v$<cr>", opts)

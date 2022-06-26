@@ -1,7 +1,7 @@
 return {
-	settings = {
-		bash = {
-			filetypes = { "sh", "zsh", "bash" },
-		},
-	},
+  settings = {
+    bash = {
+      filetypes = { "sh", "zsh", "bash" },
+    },
+  },
 }
