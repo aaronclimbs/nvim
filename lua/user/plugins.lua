@@ -268,27 +268,7 @@ return packer.startup(function(use)
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
 	-- LSP
-	use({
-		"neovim/nvim-lspconfig",
-		opt = true,
-		event = "BufReadPre",
-		wants = { "nvim-lsp-installer", "cmp-nvim-lsp", "lua-dev.nvim", "vim-illuminate", "null-ls.nvim" },
-		config = function()
-			require("config.lsp").setup()
-		end,
-		requires = {
-			"williamboman/nvim-lsp-installer",
-			"folke/lua-dev.nvim",
-			"RRethy/vim-illuminate",
-			"jose-elias-alvarez/null-ls.nvim",
-			{
-				"j-hui/fidget.nvim",
-				config = function()
-					require("fidget").setup({})
-				end,
-			},
-		},
-	})
+	use({ "neovim/nvim-lspconfig" })
 	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 	use({
