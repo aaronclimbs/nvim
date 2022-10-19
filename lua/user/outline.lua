@@ -2,7 +2,7 @@ local M = {}
 
 M.config = function()
   -- init.lua
-  vim.g.symbols_outline = {
+  require("symbols-outline").setup({
     highlight_hovered_item = true,
     show_guides = true,
     auto_preview = false,
@@ -51,7 +51,7 @@ M.config = function()
       Operator = { icon = "+", hl = "TSOperator" },
       TypeParameter = { icon = "", hl = "TSParameter" },
     },
-  }
+  })
 end
 
 return M

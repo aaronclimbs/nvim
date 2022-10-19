@@ -52,14 +52,14 @@ function! s:openWhichKeyInVisualMode()
 endfunction
 
 " Better Navigation
-nnoremap <silent> <C-j> :call VSCodeNotify('workbench.action.navigateDown')<CR>
-xnoremap <silent> <C-j> :call VSCodeNotify('workbench.action.navigateDown')<CR>
-nnoremap <silent> <C-k> :call VSCodeNotify('workbench.action.navigateUp')<CR>
-xnoremap <silent> <C-k> :call VSCodeNotify('workbench.action.navigateUp')<CR>
-nnoremap <silent> <C-h> :call VSCodeNotify('workbench.action.navigateLeft')<CR>
-xnoremap <silent> <C-h> :call VSCodeNotify('workbench.action.navigateLeft')<CR>
-nnoremap <silent> <C-l> :call VSCodeNotify('workbench.action.navigateRight')<CR>
-xnoremap <silent> <C-l> :call VSCodeNotify('workbench.action.navigateRight')<CR>
+" nnoremap <C-j> <Cmd>call VSCodeNotify('workbench.action.focusBelowGroup')<CR>
+" xnoremap <C-j> <Cmd>call VSCodeNotify('workbench.action.focusBelowGroup')<CR>
+" nnoremap <C-k> <Cmd>call VSCodeNotify('workbench.action.focusAboveGroup')<CR>
+" xnoremap <C-k> <Cmd>call VSCodeNotify('workbench.action.focusAboveGroup')<CR>
+" nnoremap <C-h> <Cmd>call VSCodeNotify('workbench.action.focusLeftGroup')<CR>
+" xnoremap <C-h> <Cmd>call VSCodeNotify('workbench.action.focusLeftGroup')<CR>
+" nnoremap <C-l> <Cmd>call VSCodeNotify('workbench.action.focusRightGroup')<CR>
+" xnoremap <C-l> <Cmd>call VSCodeNotify('workbench.action.focusRightGroup')<CR>
 
 nnoremap gr <Cmd>call VSCodeNotify('editor.action.goToReferences')<CR>
 

@@ -27,7 +27,6 @@ keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
-
 -- Navigate buffers
 keymap("n", "L", ":bnext<CR>", opts)
 keymap("n", "H", ":bprevious<CR>", opts)
@@ -61,10 +60,11 @@ keymap("n", "mh", '<cmd>lua require("harpoon.mark").add_file()<cr>', opts)
 keymap("n", "mj", "<cmd>BookmarkNext<cr>", opts)
 keymap("n", "mk", "<cmd>BookmarkPrev<cr>", opts)
 keymap(
-	"n",
-	"ms",
-	'<cmd>lua require("telescope").extensions.vim_bookmarks.all({ hide_filename=false, prompt_title="bookmarks", shorten_path=false })<cr>',
-	opts
+  "n",
+  "ms",
+  '<cmd>lua require("telescope").extensions.vim_bookmarks.all({ hide_filename=false, prompt_title="bookmarks", shorten_path=false })<cr>'
+  ,
+  opts
 )
 keymap("n", "mx", "<cmd>BookmarkClearAll<cr>", opts)
 keymap("n", "mu", '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', opts)
@@ -91,7 +91,6 @@ keymap("v", "p", '"_dP', opts)
 
 keymap("n", "g<", "<cmd>:messages<cr>", opts)
 
-
 -- ZK --
 -- Search for the notes matching the current visual selection.
 keymap("v", "<leader>zf", ":'<,'>ZkMatch<CR>", opts)
@@ -99,10 +98,10 @@ keymap("v", "<leader>zf", ":'<,'>ZkMatch<CR>", opts)
 keymap("v", "<leader>znt", ":'<,'>ZkNewFromTitleSelection { dir = vim.fn.expand('%:p:h') }<CR>", opts)
 -- Create a new note in the same directory as the current buffer, using the current selection for note content and asking for its title.
 keymap(
-	"v",
-	"<leader>znc",
-	":'<,'>ZkNewFromContentSelection { dir = vim.fn.expand('%:p:h'), title = vim.fn.input('Title: ') }<CR>",
-	opts
+  "v",
+  "<leader>znc",
+  ":'<,'>ZkNewFromContentSelection { dir = vim.fn.expand('%:p:h'), title = vim.fn.input('Title: ') }<CR>",
+  opts
 )
 
 -- RANGE FORMAT
@@ -144,4 +143,3 @@ keymap("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", opts)
 keymap("n", "<C-j>", "<cmd>NavigateDown<cr>", opts)
 keymap("n", "<C-k>", "<cmd>NavigateUp<cr>", opts)
 keymap("n", "<C-l>", "<cmd>NavigateRight<cr>", opts)
-

@@ -87,6 +87,9 @@ end
 M.on_attach = function(client, bufnr)
 	if client.name == "tsserver" then
 		client.server_capabilities.document_formatting = false
+		client.server_capabilities.range_formatting = false
+    client.server_capabilities.documentRangeFormattingProvider = false
+    client.server_capabilities.documentFormattingProvider = false
 	end
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)
